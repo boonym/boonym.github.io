@@ -3,7 +3,7 @@ let model;
 let canvas = document.getElementById('canvas');
 let ctx = canvas.getContext("2d");
 
-//window.addEventListener('resize', resizeCanvas, false);
+window.addEventListener('resize', resizeCanvas, false);
 
 const setupCamera = () => {
     navigator.mediaDevices.getUserMedia({
