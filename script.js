@@ -19,8 +19,9 @@ const detectFaces = async () => {
     const prediction = await model.estimateFaces(video, false);
 
     // console.log(prediction);
-
-    ctx.drawImage(video,0,0,window.innerWidth, window.innerHeight);
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    ctx.drawImage(video,0,0,canvas.innerWidth, canvas.innerHeight);
 
     prediction.forEach(pred =>{
         ctx.beginPath();
