@@ -5,7 +5,7 @@ let ctx = canvas.getContext("2d");
 
 const setupCamera = () => {
     navigator.mediaDevices.getUserMedia({
-        video: { width: 600, height: 400 },
+        video: { facingMode: "environment" },
         audio: false,
     })
     .then((stream) => {
