@@ -18,7 +18,7 @@ const detectFaces = async () => {
 
     // console.log(prediction);
 
-    ctx.drawImage(video, 0,0);
+    ctx.drawImage(video, 0,0), 1000,1000;
 
     prediction.forEach(pred =>{
         ctx.beginPath();
