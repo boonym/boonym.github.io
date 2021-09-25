@@ -3,6 +3,8 @@ let model;
 let canvas = document.getElementById('canvas');
 let ctx = canvas.getContext("2d");
 
+//window.addEventListener('resize', resizeCanvas, false);
+
 const setupCamera = () => {
     navigator.mediaDevices.getUserMedia({
         video: { facingMode: {exact: "environment"} },
@@ -18,7 +20,7 @@ const detectFaces = async () => {
 
     // console.log(prediction);
 
-    ctx.drawImage(video, 0,0), 1000,1000;
+    ctx.drawImage(video, 0,0, window.innerWidth, window.innerHeight);
 
     prediction.forEach(pred =>{
         ctx.beginPath();
