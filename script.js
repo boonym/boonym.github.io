@@ -5,7 +5,7 @@ let ctx = canvas.getContext("2d");
 
 const setupCamera = () => {
     navigator.mediaDevices.getUserMedia({
-        video: { facingMode: {exact: "environment"} },
+        video: { facingMode: "user" },
         audio: false,
     })
     .then((stream) => {
@@ -18,7 +18,7 @@ const detectFaces = async () => {
 
     // console.log(prediction);
 
-    ctx.drawImage(video, 0,0,600,400);
+    ctx.drawImage(video, 0,0);
 
     prediction.forEach(pred =>{
         ctx.beginPath();
