@@ -2,6 +2,7 @@ let video = document.getElementById('video');
 let model;
 let canvas = document.getElementById('canvas');
 let ctx = canvas.getContext("2d");
+window.addEventListener('resize', resizeCanvas, false);
 
 const setupCamera = () => {
     navigator.mediaDevices.getUserMedia({
@@ -17,6 +18,9 @@ const detectFaces = async () => {
     const prediction = await model.estimateFaces(video, false);
 
     // console.log(prediction);
+
+    canvas.width = document.documentElement.clientWidth;
+	canvas.height = document.documentElement.clientHeight;
 
     ctx.drawImage(video,0,0, 1000, 1000);
 
